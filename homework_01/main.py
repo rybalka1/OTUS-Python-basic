@@ -40,8 +40,26 @@ def filter_numbers(ls, param):
     <<< [2, 4]
     """
     res = []
-    for item in ls:
-        res.append(item) if param == 'odd' and item % 2 != 0 else None
-        res.append(item) if param == 'even' and item % 2 == 0 else None
-        res.append(item) if param == 'prime' and is_prime(item) else None
-    return res
+    if param == ODD:
+        for item in ls:
+            res.append(item) if item % 2 != 0 else None
+        return res    
+    elif param == EVEN:
+        for item in ls:
+            res.append(item) if item % 2 == 0 else None
+        return res
+    elif  param == PRIME:
+        for item in ls:
+            res.append(item) if is_prime(item) else None
+        return res
+    else:
+        return None            
+
+    
+    # for item in ls:
+    #     res.append(item) if param == ODD and item % 2 != 0 else None
+    #     res.append(item) if param == EVEN and item % 2 == 0 else None
+    #     res.append(item) if param == PRIME and is_prime(item) else None
+    # return res
+
+print(filter_numbers([2, 3, 4, 5], EVEN))
