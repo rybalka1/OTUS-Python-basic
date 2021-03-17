@@ -54,12 +54,3 @@ def filter_numbers(ls, param):
         return res
     else:
         return None            
-
-    
-    # for item in ls:
-    #     res.append(item) if param == ODD and item % 2 != 0 else None
-    #     res.append(item) if param == EVEN and item % 2 == 0 else None
-    #     res.append(item) if param == PRIME and is_prime(item) else None
-    # return res
-
-print(filter_numbers([2, 3, 4, 5], EVEN))
