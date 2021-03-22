@@ -39,18 +39,11 @@ def filter_numbers(ls, param):
     >>> filter_numbers([2, 3, 4, 5], EVEN)
     <<< [2, 4]
     """
-    res = []
+    res = None
     if param == ODD:
-        for item in ls:
-            res.append(item) if item % 2 != 0 else None
-        return res    
+        res = [item for item in ls if item % 2 != 0]    
     elif param == EVEN:
-        for item in ls:
-            res.append(item) if item % 2 == 0 else None
-        return res
+        res = [item for item in ls if item % 2 == 0]
     elif  param == PRIME:
-        for item in ls:
-            res.append(item) if is_prime(item) else None
-        return res
-    else:
-        return None            
+        res = [item for item in ls if is_prime(item)]
+    return res
