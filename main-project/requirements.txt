@@ -1,0 +1,4 @@
+aiogram~=2.14
+environs~=9.3.2
+asyncpg~=0.23
+emoji~=1.4.1
