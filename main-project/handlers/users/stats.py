@@ -4,8 +4,10 @@ from asyncpg import Record, Connection
 from utils.misc import rate_limit
 
 
-@rate_limit(1, 'stats')
-@dp.message_handler(commands='stats', chat_type=[types.ChatType.GROUP, types.ChatType.SUPERGROUP])
+@rate_limit(1, "stats")
+@dp.message_handler(
+    commands="stats", chat_type=[types.ChatType.GROUP, types.ChatType.SUPERGROUP]
+)
 async def bot_stats(message: types.Message):
     pool: Connection = db
     anws = f"""Статистика чата <b>{message.chat.title} </b>

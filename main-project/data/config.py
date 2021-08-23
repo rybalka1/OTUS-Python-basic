@@ -10,4 +10,4 @@ PG_PASS = env.str("PG_PASS")
 PG_USER = env.str("PG_USER")
 PG_DATABASE = env.str("PG_DATABASE")
 PG_PORT = env.int("PG_PORT")
-BOT_ID = BOT_TOKEN.split(':')[0]
+BOT_ID = BOT_TOKEN.split(":")[0]

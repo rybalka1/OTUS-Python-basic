@@ -12,7 +12,7 @@ async def set_default_commands(dp):
             types.BotCommand("stats", "Статистика"),
             types.BotCommand("warn", "Выдать предупреждение"),
         ],
-        scope=types.BotCommandScopeAllChatAdministrators()
+        scope=types.BotCommandScopeAllChatAdministrators(),
     )
     await dp.bot.set_my_commands(
         [
@@ -20,12 +20,12 @@ async def set_default_commands(dp):
             types.BotCommand("triggers", "Список триггеров"),
             types.BotCommand("stats", "Статистика"),
         ],
-        scope=types.BotCommandScopeAllGroupChats()
+        scope=types.BotCommandScopeAllGroupChats(),
     )
     await dp.bot.set_my_commands(
         [
             types.BotCommand("start", "Запустить"),
             types.BotCommand("help", "Информация о боте"),
         ],
-        scope=types.BotCommandScopeAllPrivateChats()
+        scope=types.BotCommandScopeAllPrivateChats(),
     )

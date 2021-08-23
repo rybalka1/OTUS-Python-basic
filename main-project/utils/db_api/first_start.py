@@ -4,7 +4,8 @@ from loader import db
 
 async def db_create():
     pool: Connection = db
-    await pool.execute("""create table if not exists bot_chat
+    await pool.execute(
+        """create table if not exists bot_chat
         (
             chat_id bigint not null,
             chat_type text not null,
@@ -17,8 +18,10 @@ async def db_create():
         );
 
         create unique index if not exists bot_chat_chat_id_uindex
-            on bot_chat (chat_id);""")
-    await pool.execute("""create table if not exists chat_users
+            on bot_chat (chat_id);"""
+    )
+    await pool.execute(
+        """create table if not exists chat_users
         (
             id bigserial not null,
             user_id bigint not null,
@@ -33,9 +36,11 @@ async def db_create():
         );
         
         create unique index if not exists chat_users_id_uindex
-            on chat_users (id);""")
+            on chat_users (id);"""
+    )
 
-    await pool.execute("""create table if not exists triggers
+    await pool.execute(
+        """create table if not exists triggers
         (
             id serial not null,
             chat_id bigint,
@@ -51,4 +56,5 @@ async def db_create():
         );
 
         create unique index if not exists triggers_chat_id_uindex
-        on triggers (id);""")
+        on triggers (id);"""
+    )
