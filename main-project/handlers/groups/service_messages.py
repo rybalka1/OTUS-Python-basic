@@ -99,7 +99,7 @@ async def bot_new_all_chats_member(message: types.Message):
                     *arg,
                 )
                 await message.answer(
-                    f'{item.first_name} {member.get("first_name")} ну, допустим, привет!'
+                    f'{item.first_name} {member.res("first_name")} Привет!'
                 )
                 dt_obj = datetime.now() + timedelta(hours=-3, days=365)
                 time_tuple = dt_obj.timetuple()
